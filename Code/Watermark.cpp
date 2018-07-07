@@ -117,9 +117,9 @@ int main(int argc, char** argv)
 			{
 				if (imageWithAlpha)
 				{
-					Vec4b color = output.at<Vec4b>(Point(x, y));	//Pobiera kolor w punkcie z obrazka
+					Vec4b color = output.at<Vec4b>(Point(x, y));	//Pobiera kolor w punkcie z tła
 					Vec4b imgColor = image.at<Vec4b>(Point(x - startX, y - startY)); //Pobiera odpowiedni kolor z obrazka
-					double alpha = (double)imgColor[3] / 255; //Alfa jest od 0 do 255, więc dzielimy przez 255 i * krycie
+					double alpha = (double)imgColor[3] / 255; //Alfa jest od 0 do 255, więc dzielimy przez 255
 					double beta = 1. - alpha;
 					color[0] = imgColor[0] * alpha + color[0] * beta;
 					color[1] = imgColor[1] * alpha + color[1] * beta;
